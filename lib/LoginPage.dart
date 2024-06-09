@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final String _correctEmail = 'Hello@safypower.fr';
+  final String _correctEmail = 'safypower@gmail.com';
   final String _correctPassword = 'user';
   String? _errorMessage;
 
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset('roua.png', height: 100),
+              Image.asset('assets/roua.png', height: 100),
               const SizedBox(height: 20),
               TextField(
                 controller: _emailController,

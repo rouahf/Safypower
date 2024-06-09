@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    'roua.png', // Assurez-vous que ce chemin est correct
+                    'assets/roua.png', // Assurez-vous que ce chemin est correct
                     width: constraints.maxWidth * 0.3,
                     fit: BoxFit.contain,
                   ),
