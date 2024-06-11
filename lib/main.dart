@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'theme_provider.dart';
-import 'LoginPage.dart'; // Import de la page de connexion
+import 'LoginPage.dart'; 
 
 void main() {
   runApp(

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'theme_provider.dart';
-import 'chat_bot_page.dart'; // Import de la page de chat
-import 'LoginPage.dart'; // Import de la page de connexion
+import 'chat_bot_page.dart'; 
+import 'LoginPage.dart'; 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

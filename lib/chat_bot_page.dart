@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart'; // Importez le package
 
 class ChatBotPage extends StatefulWidget {
   const ChatBotPage({super.key});
@@ -14,18 +15,32 @@ class _ChatBotPageState extends State<ChatBotPage> {
   void _sendMessage() {
     setState(() {
       _messages.add(_controller.text);
+      String response = _getBotResponse(_messages.last);
+      _messages.add(response);
       _controller.clear();
-      _messages.add(_getBotResponse(_messages.last));
+
+      // Vérifiez si la réponse contient une URL et ouvrez-la si c'est le cas
+      if (response.contains('https://safypower.fr/')) {
+        _launchURL('https://safypower.fr/');
+      }
     });
   }
 
   String _getBotResponse(String message) {
     if (message.toLowerCase().contains('bonjour')) {
-      return 'Bonjour! Nous sommes l\'équipe de SafyPower. Comment puis-je vous aider?';
+      return 'Bonjour! Nous sommes l\'équipe de SafyPower. Comment pouvons-nous vous aider?';
     } else if (message.toLowerCase().contains('comment je peux vous contactez?')) {
-      return 'Visitez notre site web https://safypower_fr';
+      return 'Visitez notre site web https://safypower.fr/';
     } else {
       return 'Ceci est une réponse automatisée.';
+    }
+  }
+
+  Future<void> _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Impossible d\'ouvrir $url';
     }
   }
 
